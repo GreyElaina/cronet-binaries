@@ -20,7 +20,12 @@ the full revision, e.g. 9A235.
 
 import argparse
 import os
-import pkg_resources
+
+try:
+    import importlib.resources as pkg_resources
+except ImportError:
+    import pkg_resources
+
 import platform
 import plistlib
 import shutil
